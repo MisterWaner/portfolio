@@ -1,3 +1,9 @@
+import Wrapper from "@/components/layout/Wrapper";
+
 export default function Home() {
-    return <p className="font-roboto">Hello, world!</p>;
+    return (
+        <Wrapper>
+            <p className="font-roboto">Hello, world!</p>
+        </Wrapper>
+    );
 }
