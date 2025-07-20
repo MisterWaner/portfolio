@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import ToggleThemeBtn from '../ui/ToggleThemeBtn';
 import NavigationLink from '../ui/NavigationLink';
 import { Menu, X } from 'lucide-react';
 
@@ -17,7 +18,7 @@ export default function Header() {
     return (
         <header className='fixed top-0 left-0 h-16 bg-background z-50 w-full'>
             <div className='h-full flex items-center justify-between px-4 md:px-8'>
-                <p className=''>LOGO</p>
+                <ToggleThemeBtn />
                 <button className='fixed top-4 right-4 md:hidden'>
                     {isMenuOpen ? (
                         <X className='cursor-pointer' onClick={toggleMenu} />
@@ -27,7 +28,7 @@ export default function Header() {
                 </button>
             </div>
             <nav
-                className={`fixed top-16 z-50 h-[calc(100%-4rem)] flex flex-col items-center justify-center w-full bg-background -translate-x-[101%] transition-transform duration-300 md:flex-row  md:h-16 md:top-0 md:border-0 md:translate-x-0 md:transition-none ${
+                className={`fixed top-14 z-50 h-[calc(100%-3.5rem)] flex flex-col items-center justify-center w-full bg-background -translate-x-[101%] transition-transform duration-300 md:flex-row md:right-0 md:w-3/4 md:h-16 md:top-0 md:border-0 md:translate-x-0 md:transition-none ${
                     isMenuOpen ? 'translate-x-0' : ''
                 }`}
             >

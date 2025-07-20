@@ -28,7 +28,14 @@
     --background: oklch(12.9% 0.042 264.695);
     --foreground: oklch(98.4% 0.003 247.858);
 
-    .neon-nav-text-active {
+    .neon-text {
+        color: oklch(98.4% 0.003 247.858);
+        text-shadow: 0 0 10px var(--color-green-neon),
+            0 0 15px var(--color-green-neon), 0 0 25px var(--color-emerald-neon),
+            0 0 35px var(--color-emerald-neon), 0 0 45px var(--color-cyan-neon);
+    }
+
+    .link-neon-active {
         color: var(--color-cyan-neon);
         text-shadow: 0 0 10px var(--color-green-neon),
             0 0 15px var(--color-green-neon), 0 0 25px var(--color-emerald-neon),
@@ -50,7 +57,14 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.neon-nav-text-active {
+.neon-text {
+    color: var(--color-orange-neon);
+    text-shadow: 0 0 10px var(--color-yellow-neon),
+        0 0 15px var(--color-yellow-neon), 0 0 25px var(--color-amber-neon),
+        0 0 35px var(--color-amber-neon), 0 0 45px var(--color-orange-neon);
+}
+
+.link-neon-active {
     color: var(--color-orange-neon);
     text-shadow: 0 0 10px var(--color-yellow-neon),
         0 0 15px var(--color-yellow-neon), 0 0 25px var(--color-amber-neon),
