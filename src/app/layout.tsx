@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Poppins, Roboto } from 'next/font/google';
 import './globals.css';
+import { ThemeProvider } from '@/context/ThemeContext';
 import Header from '@/components/layout/Header';
 
 const roboto = Roboto({
@@ -26,12 +27,14 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang='en'>
+        <html lang='en' suppressHydrationWarning>
             <body
                 className={`${roboto.variable} ${poppins.variable} antialiased`}
             >
-                <Header />
-                {children}
+                <ThemeProvider>
+                    <Header />
+                    {children}
+                </ThemeProvider>
             </body>
         </html>
     );

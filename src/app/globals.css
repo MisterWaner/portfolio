@@ -1,11 +1,14 @@
 @import 'tailwindcss';
 
 :root {
-    --background: #ffffff;
-    --foreground: #171717;
-    --cyan-neon: #22d3ee;
-    --green-neon: #4ade80;
-    --emerald-neon: #34d399;
+    --background: oklch(98.4% 0.003 247.858);
+    --foreground: oklch(12.9% 0.042 264.695);
+    --cyan-neon: oklch(78.9% 0.154 211.53);
+    --green-neon: oklch(79.2% 0.209 151.711);
+    --emerald-neon: oklch(76.5% 0.177 163.223);
+    --orange-neon: oklch(75% 0.183 55.934);
+    --amber-neon: oklch(82.8% 0.189 84.429);
+    --yellow-neon: oklch(85.2% 0.199 91.936);
 }
 
 @theme inline {
@@ -14,14 +17,30 @@
     --color-cyan-neon: var(--cyan-neon);
     --color-green-neon: var(--green-neon);
     --color-emerald-neon: var(--emerald-neon);
+    --color-orange-neon: var(--orange-neon);
+    --color-amber-neon: var(--amber-neon);
+    --color-yellow-neon: var(--yellow-neon);
     --font-roboto: var(--font-roboto);
     --font-poppins: var(--font-poppins);
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #020618;
-        --foreground: #ededed;
+.dark {
+    --background: oklch(12.9% 0.042 264.695);
+    --foreground: oklch(98.4% 0.003 247.858);
+
+    .neon-nav-text-active {
+        color: var(--color-cyan-neon);
+        text-shadow: 0 0 10px var(--color-green-neon),
+            0 0 15px var(--color-green-neon), 0 0 25px var(--color-emerald-neon),
+            0 0 35px var(--color-emerald-neon), 0 0 45px var(--color-cyan-neon);
+    }
+
+    .link-neon:hover {
+        color: var(--color-cyan-neon);
+        text-shadow: 0 0 10px var(--color-green-neon),
+            0 0 15px var(--color-green-neon), 0 0 25px var(--color-emerald-neon),
+            0 0 35px var(--color-emerald-neon), 0 0 45px var(--color-cyan-neon);
+        transition: text-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
     }
 }
 
@@ -32,16 +51,16 @@ body {
 }
 
 .neon-nav-text-active {
-    color: var(--color-cyan-neon);
-    text-shadow: 0 0 10px var(--color-green-neon),
-        0 0 15px var(--color-green-neon), 0 0 25px var(--color-emerald-neon),
-        0 0 35px var(--color-emerald-neon), 0 0 45px var(--color-cyan-neon);
+    color: var(--color-orange-neon);
+    text-shadow: 0 0 10px var(--color-yellow-neon),
+        0 0 15px var(--color-yellow-neon), 0 0 25px var(--color-amber-neon),
+        0 0 35px var(--color-amber-neon), 0 0 45px var(--color-orange-neon);
 }
 
 .link-neon:hover {
-    color: var(--color-cyan-neon);
-    text-shadow: 0 0 10px var(--color-green-neon),
-        0 0 15px var(--color-green-neon), 0 0 25px var(--color-emerald-neon),
-        0 0 35px var(--color-emerald-neon), 0 0 45px var(--color-cyan-neon);
-    transition: text-shadow 0.2s ease-in-out , color 0.2s ease-in-out;
+    color: var(--color-orange-neon);
+    text-shadow: 0 0 10px var(--color-yellow-neon),
+        0 0 15px var(--color-yellow-neon), 0 0 25px var(--color-amber-neon),
+        0 0 35px var(--color-amber-neon), 0 0 45px var(--color-orange-neon);
+    transition: text-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
 }

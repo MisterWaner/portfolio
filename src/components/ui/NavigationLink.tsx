@@ -52,8 +52,8 @@ export default function NavigationLink({
                 handleClick();
                 onClick();
             }}
-            className={`font-poppins w-full flex items-center justify-center px-4 text-lg my-2 hover:text-cyan-neon ${
-                isActive ? 'neon-nav-text-active' : ''
+            className={`font-poppins w-full flex items-center justify-center px-4 text-lg my-2 dark:hover:text-cyan-neon ${
+                isActive ? 'dark neon-nav-text-active' : ''
             } link-neon`}
         >
             {children}
