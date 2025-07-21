@@ -1,11 +1,32 @@
 'use client';
 import { useState } from 'react';
+import { useScrollSpy } from '@/hooks/useScrollSpy';
 import ToggleThemeBtn from '../ui/ToggleThemeBtn';
 import NavigationLink from '../ui/NavigationLink';
 import { Menu, X } from 'lucide-react';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const sectionData = [
+        {
+            title: 'Accueil',
+            id: 'accueil',
+        },
+        {
+            title: 'À propos',
+            id: 'à-propos',
+        },
+        {
+            title: 'Mes projets',
+            id: 'projets',
+        },
+        {
+            title: 'Contact',
+            id: 'contact',
+        },
+    ];
+    const sectionIds = sectionData.map((section) => section.id);
+    const activeId = useScrollSpy(sectionIds);
 
     function toggleMenu() {
         setIsMenuOpen(!isMenuOpen);
@@ -13,6 +34,14 @@ export default function Header() {
 
     function closeMenu() {
         setIsMenuOpen(false);
+    }
+
+    function handleClick(id: string) {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+            closeMenu();
+        }
     }
 
     return (
@@ -32,18 +61,18 @@ export default function Header() {
                     isMenuOpen ? 'translate-x-0' : ''
                 }`}
             >
-                <NavigationLink onClick={closeMenu} href='/#hero'>
-                    Home
-                </NavigationLink>
-                <NavigationLink onClick={closeMenu} href='/#about'>
-                    About
-                </NavigationLink>
-                <NavigationLink onClick={closeMenu} href='/#projects'>
-                    Projects
-                </NavigationLink>
-                <NavigationLink onClick={closeMenu} href='/#contact'>
-                    Contact
-                </NavigationLink>
+                {sectionData.map((section) => (
+                    <NavigationLink
+                        href={`#${section.id}`}
+                        className={`transition-colors duration-200 ${
+                            activeId === section.id ? 'link-neon-active' : ''
+                        }`}
+                        key={section.id}
+                        onClick={() => handleClick(section.id)}
+                    >
+                        {section.title}
+                    </NavigationLink>
+                ))}
             </nav>
         </header>
     );

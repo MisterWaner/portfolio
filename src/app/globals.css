@@ -49,6 +49,14 @@
             0 0 35px var(--color-emerald-neon), 0 0 45px var(--color-cyan-neon);
         transition: text-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
     }
+
+    .button {
+        background-color: oklch(78.9% 0.154 211.53);
+
+        &:hover {
+            background-color: oklch(71.5% 0.143 215.221);
+        }
+    }
 }
 
 body {
@@ -77,4 +85,18 @@ body {
         0 0 15px var(--color-yellow-neon), 0 0 25px var(--color-amber-neon),
         0 0 35px var(--color-amber-neon), 0 0 45px var(--color-orange-neon);
     transition: text-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.button {
+    padding: 8px 16px;
+    background-color: oklch(75% 0.183 55.934);
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    &:hover {
+        background-color: oklch(70.5% 0.213 47.604);
+    }
 }

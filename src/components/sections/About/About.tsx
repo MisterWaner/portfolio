@@ -1,8 +1,6 @@
-import SectionContainer from '@/components/layout/SectionContainer';
-
 export default function About() {
     return (
-        <SectionContainer id='about'>
+        <section id='à-propos' className='mt-10'>
             <div>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
                 voluptates laboriosam illum ipsa. Cupiditate magni nemo
@@ -81,6 +79,6 @@ export default function About() {
                 impedit nam vitae sit voluptatem. Saepe esse temporibus eos cum
                 aliquam.
             </div>
-        </SectionContainer>
+        </section>
     );
 }

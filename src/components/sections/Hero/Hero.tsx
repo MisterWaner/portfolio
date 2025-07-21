@@ -1,18 +1,42 @@
 import Image from 'next/image';
-import picOfMe from '/public/picofme_4.png';
-import SectionContainer from '@/components/layout/SectionContainer';
+import Link from 'next/link';
+import Button from '@/components/ui/Button';
 
 export default function Hero() {
     return (
-        <SectionContainer id='hero'>
-            <article className='w-full flex flex-col items-center lg:flex-row'>
-                <Image src={picOfMe} alt='Picture of me' />
-                <h1 className='font-poppins text-4xl md:text-6xl font-bold mt-4'>
-                    Je suis <span className='neon-text'>Erwan</span>.
-                    <br />
-                    Développeur Web.
-                </h1>
+        <section
+            id='accueil'
+            className='h-screen mt-10 flex flex-col items-center'
+        >
+            <article className='w-full h-full flex flex-col items-center md:flex-row md:justify-between'>
+                <Image
+                    src='/picofme_1.png'
+                    alt='Picture of me'
+                    className='hidden md:block rounded-full'
+                    width={500}
+                    height={500}
+                />
+                <Image
+                    src='/picofme_4.png'
+                    alt='Picture of me'
+                    className='md:hidden'
+                    width={500}
+                    height={500}
+                />
+
+                <div className='mt-24 md:mt-0'>
+                    <h1 className='font-poppins text-4xl md:text-6xl font-bold text-center md:text-left'>
+                        Je suis <span className='neon-text'>Erwan</span>.
+                        <br />
+                        Développeur Web.
+                    </h1>
+                    <div className='mt-8 w-full flex justify-center md:justify-start'>
+                        <Link href='/#à-propos'>
+                            <Button>À Propos</Button>
+                        </Link>
+                    </div>
+                </div>
             </article>
-        </SectionContainer>
+        </section>
     );
 }

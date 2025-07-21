@@ -8,12 +8,14 @@ export interface NavigationLinkProps {
     href: string;
     children: React.ReactNode;
     onClick: () => void;
+    className?: string;
 }
 
 export default function NavigationLink({
     href,
     children,
     onClick,
+    className,
 }: NavigationLinkProps) {
     const pathname = usePathname();
     const currentHash = useLocationHash();
@@ -54,7 +56,7 @@ export default function NavigationLink({
             }}
             className={`font-poppins w-full flex items-center justify-center px-4 text-lg my-2 dark:hover:text-cyan-neon ${
                 isActive ? 'dark link-neon-active' : ''
-            } link-neon`}
+            } link-neon ${className}`}
         >
             {children}
         </Link>
