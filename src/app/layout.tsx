@@ -3,6 +3,7 @@ import { Poppins, Roboto } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/context/ThemeContext';
 import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 
 const roboto = Roboto({
     variable: '--font-roboto',
@@ -34,6 +35,7 @@ export default function RootLayout({
                 <ThemeProvider>
                     <Header />
                     {children}
+                    <Footer />
                 </ThemeProvider>
             </body>
         </html>

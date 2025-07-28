@@ -26,7 +26,7 @@ export default function Hero() {
                 />
 
                 <div className='mt-24 md:mt-0'>
-                    <h1 className='font-poppins text-4xl md:text-6xl font-bold text-center md:text-left'>
+                    <h1 className='font-poppins text-4xl lg:text-6xl font-bold text-center md:text-left'>
                         Je suis <span className='neon-text'>Erwan</span>.
                         <br />
                         Développeur Web.

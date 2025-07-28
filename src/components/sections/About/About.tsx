@@ -1,6 +1,9 @@
 export default function About() {
     return (
         <section id='a-propos' className='mt-10'>
+            <h2 className='text-3xl font-bold mb-6 font-poppins'>
+                À Propos de Moi
+            </h2>
             <div>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
                 voluptates laboriosam illum ipsa. Cupiditate magni nemo

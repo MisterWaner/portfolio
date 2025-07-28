@@ -1,9 +1,12 @@
-
+import ProjectGrid from "@/components/ui/Project/ProjectGrid";
 
 export default function Projects() {
     return (
-        <section id='projets' className='mt-10'>
-            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet similique voluptate cum adipisci repellendus eum quo expedita. Neque ullam quam hic, optio perspiciatis praesentium labore, aspernatur culpa necessitatibus nam architecto ea saepe maiores nobis natus earum ipsum nihil sequi laudantium commodi ab nemo iusto! Nobis et labore molestias nostrum odio id obcaecati debitis quisquam natus delectus corrupti qui culpa, laborum ut voluptatem accusamus molestiae laboriosam ipsam deserunt adipisci quasi odit quia? Culpa laudantium saepe impedit dolor consequatur excepturi quo ipsum temporibus eos ratione fugit reiciendis, similique eligendi? Quia quidem ullam, iste est consequuntur omnis at modi numquam, eos aut, eaque blanditiis ratione adipisci minus accusantium unde repellat sint neque eius ducimus. Quidem odio reprehenderit, perspiciatis tenetur placeat provident aliquam veniam esse maxime praesentium eos, distinctio enim, cumque obcaecati pariatur dolorum a sit vitae quis similique. Ea officia quae pariatur voluptates voluptatem quidem eos eligendi architecto! Provident expedita hic, laborum doloribus voluptates vel laudantium quam, nisi magni tenetur iusto debitis in inventore obcaecati mollitia libero, et voluptatibus quia? Quos doloremque quia veritatis voluptas odio reiciendis nostrum consequatur vel unde maxime ipsum saepe mollitia ad sapiente molestiae rem quisquam perspiciatis autem, nesciunt placeat! Quasi laudantium explicabo odio placeat unde, sunt cupiditate nam saepe a illum delectus, animi, necessitatibus beatae reprehenderit! Saepe nobis exercitationem aspernatur ratione ipsum possimus animi laudantium sit earum, praesentium veniam consequuntur assumenda sapiente voluptas atque officia eos placeat consectetur error obcaecati. Ut dicta, possimus officia accusamus eligendi id sunt, illo quisquam, vitae maiores harum minus aspernatur ipsa earum doloribus?</div>
+        <section id='projets' className='mt-20'>
+            <h2 className='text-3xl font-bold mb-6 font-poppins'>
+                Mes Projets
+            </h2>
+            <ProjectGrid />
         </section>
     );
 }
