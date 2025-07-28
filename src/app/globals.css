@@ -100,3 +100,7 @@ body {
         background-color: oklch(70.5% 0.213 47.604);
     }
 }
+
+section {
+    scroll-margin-top: 4rem;
+}

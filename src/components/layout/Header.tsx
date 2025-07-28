@@ -7,6 +7,7 @@ import { Menu, X } from 'lucide-react';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     const sectionData = [
         {
             title: 'Accueil',
@@ -14,7 +15,7 @@ export default function Header() {
         },
         {
             title: 'À propos',
-            id: 'à-propos',
+            id: 'a-propos',
         },
         {
             title: 'Mes projets',
@@ -26,6 +27,7 @@ export default function Header() {
         },
     ];
     const sectionIds = sectionData.map((section) => section.id);
+
     const activeId = useScrollSpy(sectionIds);
 
     function toggleMenu() {
@@ -38,8 +40,18 @@ export default function Header() {
 
     function handleClick(id: string) {
         const element = document.getElementById(id);
+        const header = document.querySelector('header');
+        const headerOffset = header ? header.getBoundingClientRect().height : 0;
+        
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+            const elementPosition =
+                element.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth',
+            });
             closeMenu();
         }
     }

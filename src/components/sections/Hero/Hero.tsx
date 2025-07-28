@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { User } from 'lucide-react';
 import Button from '@/components/ui/Button';
 
 export default function Hero() {
@@ -31,8 +32,11 @@ export default function Hero() {
                         Développeur Web.
                     </h1>
                     <div className='mt-8 w-full flex justify-center md:justify-start'>
-                        <Link href='/#à-propos'>
-                            <Button>À Propos</Button>
+                        <Link href='/#a-propos'>
+                            <Button className='flex items-end gap-2'>
+                                <User height={28} width={28} />
+                                À Propos
+                            </Button>
                         </Link>
                     </div>
                 </div>

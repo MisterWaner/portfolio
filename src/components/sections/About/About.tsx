@@ -1,6 +1,6 @@
 export default function About() {
     return (
-        <section id='à-propos' className='mt-10'>
+        <section id='a-propos' className='mt-10'>
             <div>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
                 voluptates laboriosam illum ipsa. Cupiditate magni nemo
