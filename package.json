@@ -13,7 +13,9 @@
     "next": "15.3.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "usehooks-ts": "^3.1.1"
+    "react-hook-form": "^7.61.1",
+    "usehooks-ts": "^3.1.1",
+    "zod": "^4.0.14"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
