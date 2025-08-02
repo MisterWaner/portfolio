@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { parsePhoneNumberFromString } from 'libphonenumber-js';
 
 export const formSchema = z.object({
     name: z.string().min(1, { message: 'Le nom est requis' }).trim(),
@@ -9,12 +10,17 @@ export const formSchema = z.object({
         .lowercase()
         .trim(),
     phone: z
-        .string({})
+        .string()
         .min(1, { message: 'Le téléphone est requis' })
         .trim()
-        .optional(),
-    message: z
-        .string({ error: 'Le message est requis' })
-        .min(1, { message: 'Le message est requis' })
-        .trim(),
+        .refine(
+            (value) => {
+                const phoneNumber = parsePhoneNumberFromString(value);
+                return phoneNumber ? phoneNumber.isValid() : false;
+            },
+            { message: 'Numéro de téléphone invalide' }
+        ),
+    message: z.string().min(1, { message: 'Le message est requis' }).trim(),
 });
+
+export type formSchemaType = z.infer<typeof formSchema>;

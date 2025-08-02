@@ -1,29 +1,36 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
-interface InputProps {
+type InputProps = {
     id?: string;
     label: string;
     placeholder?: string;
     type?: string;
     className?: string;
-}
+    error?: string;
+} & React.InputHTMLAttributes<HTMLInputElement>;
 
-export default function Input({
-    label,
-    placeholder,
-    type,
-    className,
-    id
-}: InputProps) {
-    return (
-        <>
-            <label className='block text-sm mb-2'>{label}</label>
-            <input
-                id={id}
-                type={type}
-                placeholder={placeholder}
-                className={`border p-2 text-sm rounded w-full focus:border-cyan-400 ${className}`}
-            />
-        </>
-    );
-}
+const Input = forwardRef<HTMLInputElement, InputProps>(
+    ({ label, placeholder, type, className, id, error, ...rest }, ref) => {
+        return (
+            <>
+                <label htmlFor={id} className='block text-sm mb-2'>
+                    {label}
+                </label>
+                <input
+                    ref={ref}
+                    id={id}
+                    type={type}
+                    placeholder={placeholder}
+                    className={`border p-2 text-sm rounded w-full focus:border-cyan-400 ${
+                        error ? 'border-red-500' : ''
+                    } ${className || ''}`}
+                    {...rest}
+                />
+                {error && <p className='text-red-500 text-sm'>{error}</p>}
+            </>
+        );
+    }
+);
+
+Input.displayName = 'Input';
+export default Input;
