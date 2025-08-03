@@ -13,14 +13,7 @@ export default function Hero() {
                 <Image
                     src='/picofme_1.png'
                     alt='Picture of me'
-                    className='hidden md:block rounded-full'
-                    width={500}
-                    height={500}
-                />
-                <Image
-                    src='/picofme_4.png'
-                    alt='Picture of me'
-                    className='md:hidden'
+                    className='block rounded-full'
                     width={500}
                     height={500}
                 />
